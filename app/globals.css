@@ -1,26 +1,53 @@
 @import "tailwindcss";
 
+/* Color tokens. Components use names like bg-surface or text-accent instead of raw colors,
+   so light and dark mode only need to be defined here. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --subtle: #eef0f3;
+  --line: #dfe3e8;
+  --fg: #16191d;
+  --muted: #5f6874;
+  --accent: #0d9488;
+  --accent-soft: #e0f4f1;
+  --training: #6d4ed8;
+  --training-soft: #eee9fc;
+  --danger: #d1343e;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --bg: #0f1215;
+    --surface: #171b20;
+    --subtle: #222830;
+    --line: #2c333c;
+    --fg: #e8ebee;
+    --muted: #9aa3ae;
+    --accent: #2dbfb0;
+    --accent-soft: #123532;
+    --training: #a993f5;
+    --training-soft: #2a2340;
+    --danger: #f0646c;
   }
 }
 
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-subtle: var(--subtle);
+  --color-line: var(--line);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-training: var(--training);
+  --color-training-soft: var(--training-soft);
+  --color-danger: var(--danger);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
 }
